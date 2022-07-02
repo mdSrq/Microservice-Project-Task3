@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-app-client
+spec:
+  selector:
+    matchLabels:
+      app: rest-app-client
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rest-app-client
+    spec:
+      containers:
+        - name: rest-app-client
+          image: mdshariq614/rest-app-client:0.0.2
+          ports:
+            - containerPort: 80
